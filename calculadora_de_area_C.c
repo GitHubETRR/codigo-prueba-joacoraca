@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 float calculadora_circulo_area(float radio) {
@@ -11,7 +10,7 @@ float calculadora_circulo_area(float radio) {
 
 int main() {
     float radio;
-    printf("Ingresa el radio del circulo ");
+    printf("Ingresa el radio del circulo: ");
     scanf("%f", &radio);
 
     float area = calculadora_circulo_area(radio);
