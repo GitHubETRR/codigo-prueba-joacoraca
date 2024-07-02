@@ -8,7 +8,7 @@ int main(){
     int ddmmaaaa, dias, mes, año;
     scanf("%d", &ddmmaaaa);
     dias= ddmmaaaa / 1000000;
-    mes = ddmmaaaa / 10000000;
+    mes = (ddmmaaaa-dias*10000)%  10000;
     año = ddmmaaaa % 10000;
     printf("%ddias %dmes %daño", dias, mes, año);
     getchar();
