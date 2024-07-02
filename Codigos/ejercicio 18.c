@@ -2,8 +2,8 @@
 
 
 int main() {
-    printf("Bienvenido a la calculadora de area");
-    const float PI = 3.14; 
+    const float PI = 3.14;
+    printf("Bienvenido a la calculadora de area"); 
     float radio;
     printf("Ingresa el radio del circulo: ");
     scanf("%f", &radio);
