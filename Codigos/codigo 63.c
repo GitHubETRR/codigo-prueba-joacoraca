@@ -14,17 +14,14 @@ int multiplo(int a, int b) {
     }
     if (a % b == 0) {
         printf("verdadero\n");
-        return 1;
     } else {
         printf("falso\n");
-        return 0;
     }
 }
 
 
 int main() {
     int a, b, area;
-
     printf("Introduce dos numeros\n");
     scanf("%d", &a);
     scanf("%d", &b);
