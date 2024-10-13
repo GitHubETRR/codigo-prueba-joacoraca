@@ -13,9 +13,7 @@ int main (){
         printf("%d \n", tempTotales[i]);
     }
     int minTemp = encontrarMinTemp(tempTotales);
-    int diaMinTemp = encontrarDiaMinTemp(minTemp, tempTotales);
-    printf("La mínima temperatura es: %d °C\n", minTemp);
-    printf("La temperatura mínima de %d°C se produjo el día %d del mes de Junio.\n", minTemp, diaMinTemp);
+    int diaTempMin = encontrarDiaMinTemp(minTemp, tempTotales);
     return 0;
 }
 
@@ -29,10 +27,12 @@ int encontrarMinTemp(int tempTotales[]) {
         printf("La mínima temperatura es \n%d °C", minTemp );
 }
 
-int encontrarDiaMinTemp(int minTemp, int tempTotales[]) {
+int encontrarDiaMinTemp(int minTemp, int tempTotales) {
+    int diaTempMin;
     for (int i = 0; i < 30; i++) {
         if (tempTotales[i] == minTemp) {
-            printf("La temperatura mínima se produjo el día %d del mes de Junio \n", i);
+            int diaTempMin = i;
+            printf("La temperatura mínima se produjo el día %d del mes de Junio \n", diaTempMin);
             
         }
     }
