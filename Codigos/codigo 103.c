@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int encontrarMinTemp (tempTotales);
-int encontrarDiaMinTemp (minTemp);
+int encontrarMinTemp (int tempTotales[]);
+int encontrarDiaMinTemp (int minTemp, int tempTotales);
 
 int main (){
     int tempTotales[30];
@@ -12,17 +12,28 @@ int main (){
         tempTotales[i] = rand () % 101 * -1;
         printf("%d \n", tempTotales[i]);
     }
-    printf("Y la temperatura mínima es : \n%d", encontrarMinTemp);
-    //printf("En el día: %d \n", encontrarDiaMinTemp);
+    int minTemp = encontrarMinTemp(tempTotales);
+    int diaMinTemp = encontrarDiaMinTemp(minTemp, tempTotales);
+    printf("La mínima temperatura es: %d °C\n", minTemp);
+    printf("La temperatura mínima de %d°C se produjo el día %d del mes de Junio.\n", minTemp, diaMinTemp);
     return 0;
 }
 
-int encontrarMinTemp(int tempTotales) {
+int encontrarMinTemp(int tempTotales[]) {
     int minTemp = tempTotales[0];
-    for (int i = 0; i < 30; i++) {
+    for (int i = 1; i < 30; i++) {
         if (tempTotales[i] < minTemp) {
             minTemp = tempTotales[i];
         }
-        printf("%d", minTemp)
+    }
+        printf("La mínima temperatura es \n%d °C", minTemp );
+}
+
+int encontrarDiaMinTemp(int minTemp, int tempTotales[]) {
+    for (int i = 0; i < 30; i++) {
+        if (tempTotales[i] == minTemp) {
+            printf("La temperatura mínima se produjo el día %d del mes de Junio \n", i);
+            
+        }
     }
 }
