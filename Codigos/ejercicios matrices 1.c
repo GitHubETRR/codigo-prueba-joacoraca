@@ -4,44 +4,32 @@
 #include <time.h>
 #define N 5
 void matrizRandom (int numRandom[N][N]);
-int encontrarNumMax (int maxNum, int numRandom[N][N]);
+int encontrarNumMax (int numRandom[N][N]);
 int main (){
-    int numRandom[N][N], maxNum;
+    int numRandom[N][N], numMax;
     matrizRandom(numRandom);
-    int encontrarNumMax (maxNum, numRandom);
-
-
+    printf("El número máximo es %d", numMax);
 }
 
 void matrizRandom (int numRandom[N][N]){
     for (int i = 0; i < N; i++)
     {
-        for (int j = 0; i < N; j++)
+        for (int j = 0; j < N; j++)
         {
             numRandom [i][j] = (rand()%30) + 1;
-            printf("%d\n", numRandom[i][j]);
+            printf("%d ", numRandom[i][j]);
         }
         printf("\n");
     }
 }
 
-int numRandom (int maxNum, int numRandom[N][N]){
-    int numRandom[0][0];
-    int maxNum
-    numRandom[0][0] = maxNum;
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; i < N; j++)
-        {
-            if (numRandom[i][j] > maxNum)
-            {
-                maxNum = numRandom [i][j];
-                printf("El numero maximo es %d \n", maxNum);
+int encontrarNumMax (int numRandom[N][N]) {
+    int numMax = numRandom[0][0];
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {  
+            if (numRandom[i][j] > numMax) { 
+                numMax = numRandom[i][j];
             }
-            
         }
-        
     }
-    
-
 }
