@@ -11,18 +11,18 @@ int main(){
     char c[COLUMNAS][FILAS];
     numTablero(c[COLUMNAS][FILAS]);
     tablero (c[COLUMNAS][FILAS]);
-    
     return 0;
 }
 
 void numTablero (char c[COLUMNAS][FILAS]){
 
     char numPosicion = 1;
-    for (int i=0; i < 3; i++)
-    {
+    for (int i = 0; i < 3; i++)
+    {  
         for (int j=0; i < 3; j++)
         {
             c [i][j] = numPosicion++;
+            printf("%c")
         }
         
     }
@@ -38,9 +38,4 @@ void tablero (char c [COLUMNAS][FILAS]){
         }
     }
     
-}
-
-void introPos (char c [COLUMNAS][FILAS]){
-    
-
 }
