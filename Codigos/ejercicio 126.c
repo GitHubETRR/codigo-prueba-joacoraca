@@ -1,4 +1,8 @@
 #include <stdio.h>
+int getDia(fecha_t fecha);
+int getMes(fecha_t fecha);
+int getAnio(fecha_t fecha);
+int siEsBisiesto(int anio);
 
 typedef struct {
     int dia;
@@ -6,31 +10,30 @@ typedef struct {
     int anio;
 } fecha_t;
 
-int getDia(fecha_t f) {
-    return f.dia;
+int getDia(fecha_t fecha) {
+    return fecha.dia;
 }
 
-int getMes(fecha_t f) {
-    return f.mes;
+int getMes(fecha_t fecha) {
+    return fecha.mes;
 }
 
-int getAnio(fecha_t f) {
-    return f.anio;
+int getAnio(fecha_t fecha) {
+    return fecha.anio;
 }
 
-int siEsBisiesto(fecha_t f) {
-    return (f.anio % 4 == 0 && f.anio % 100 != 0) || (f.anio % 400 == 0);
+int siEsBisiesto(fecha_t fecha) {
+    return (fecha.anio % 4 == 0 && fecha.anio % 100 != 0) || (fecha.anio % 400 == 0);
 }
 
 int main() {
-    fecha_t hoy = {22, 11, 2024};
-    printf("Día: %d\n", getDia(hoy));
-    printf("Mes: %d\n", getMes(hoy));
-    printf("Año: %d\n", getAnio(hoy));
-    if (siEsBisiesto(hoy)) {
-        printf("El año %d es bisiesto.\n", getAnio(hoy));
+    printf("Día: %d\n", getDia(fechaHoy));
+    printf("Mes: %d\n", getMes(fechaHoy));
+    printf("Año: %d\n", getAnio(fechaHoy));
+    if (siEsBisiesto(fechaHoy)) {
+        printf("El año %d es bisiesto.\n", getAnio(fechaHoy));
     } else {
-        printf("El año %d no es bisiesto.\n", getAnio(hoy));
+        printf("El año %d no es bisiesto.\n", getAnio(fechaHoy));
     }
     return 0;
 }
